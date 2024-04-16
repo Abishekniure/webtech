@@ -1,184 +1,233 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: rgb(112, 67, 167);
 }
 
-/* Add this CSS for sticky navbar */
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar styles */
 .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* Ensure the navbar stays on top of other content */
-    background-color: rgb(132, 79, 197);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(132, 79, 197);
+  color: #fff; /* Change as needed */
+  z-index: 1000;
 }
 
-/* Add this CSS for the header */
-.header {
-    
-    padding: 10px 0;
-    margin-bottom: 20px; /* Adjust this margin as needed */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
+.navbar img {
+  margin-right: 10px;
+}
 
+.nav-links {
+  list-style-type: none;
+  display: flex;
+}
 
-.navbar a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    justify-content: space-evenly;
-    margin: 0 20px;
+.nav-links li {
+  margin-right: 15px;
+}
+
+.nav-links li a {
+  color: #fff; /* Change as needed */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffd700; /* Change as needed */
 }
 
 .nav-search {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .nav-search input {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+  padding: 5px;
+  border: 1px solid #fff; /* Change as needed */
+  border-radius: 5px;
 }
 
-.nav-search .search-icon {
-    padding: 5px;
-    background-color: #31a2ee;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    margin-left: -30px;
-    cursor: pointer;
+.nav-search button {
+  padding: 5px 10px;
+  background-color: #fff; /* Change as needed */
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  cursor: pointer;
 }
 
-.content {
-    padding: 30px;
-    text-align: center;
-    background-color:rgb(112, 67, 167);
-    
+.nav-search button:hover {
+  background-color: #ddd; /* Change as needed */
 }
-.home-content{
- 
-   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+
+.nav-search a {
+  color: #fff; /* Change as needed */
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 1.5rem;
 }
-.home-selection{
-    margin-top: 10px;
+
+.content-home {
+  padding: 30px;
+  text-align: center;
+  background-color: rgb(112, 67, 167);
+}
+
+.home-content {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.home-section {
+  position: relative;
+  height: 400px;
+}
+.home-btn {
+  position: absolute;
+  top: 80%;
+  left: 10%;
+}
+.home-img2 {
+  position: absolute;
+  top: 30%;
+  right: 0;
+}
+.home-img1 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
 }
 /* shop section */
-.shop-section{
-    display:flex;
-    justify-content: space-evenly;
-    background-color:rgb(130, 94, 175);
+.shop-section {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(130, 94, 175);
 }
-.box{
-
-    height:400px;
-    width:32%;
-    background-color: white;
-    margin-top: 15px;
-
+.box {
+  height: 400px;
+  width: 32%;
+  background-color: white;
+  margin-top: 15px;
 }
-.box-img{
-    height: 400px;
-    background-color: #333;
-    background-size: cover;
-    background-repeat:none;
-    
+.box-img {
+  height: 400px;
+  background-color: #333;
+  background-size: cover;
+  background-repeat: none;
 }
-.box-content{
-    margin-left: 12px;
-    margin-right: 12px;
+.box-content {
+  margin-left: 12px;
+  margin-right: 12px;
 }
 .shoe {
-    text-align: center;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
 }
 .shoe img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 .shoe-details {
-    padding: 20px;
+  padding: 20px;
 }
 .shoe-name {
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
 }
 .shoe-price {
-    color: #007bff;
-    font-size: 16px;
+  color: #007bff;
+  font-size: 16px;
 }
 .add-to-cart {
-    margin-top: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 /* footer */
-footer{
-    margin-top: 15px;
+footer {
+  margin-top: 15px;
 }
 .foot-panel {
-    background-color:#422441;
-    color: white;
-    height:50px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
+  background-color: #422441;
+  color: white;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
 }
-.foot-panel2{
-    background-color:#703873;
-    color:white;
-    height:300px;
-    display:flex;
-    justify-content: space-evenly;
+.foot-panel2 {
+  background-color: #703873;
+  color: white;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
 }
-ul{
-    margin-top: 10px;
+ul {
+  margin-top: 10px;
 }
-ul a{
-    display:block;
-    font-size:15px;
-    margin-top: 10px;
-
+ul a {
+  display: block;
+  font-size: 15px;
+  margin-top: 10px;
 }
-.foot-panel3{
-    background-color: #703873;
-    color: white;
-    border-top:0.5px solid white;
-    height:70px;
-    justify-content: center;
-    align-items:center ;
+.foot-panel3 {
+  background-color: #703873;
+  color: white;
+  border-top: 0.5px solid white;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
 }
-.logo{
-    background-image:url("./logo.png");
-    background-size: cover;
-    height:50px;
-    width:100px;
+.logo {
+  background-image: url("./logo.png");
+  background-size: cover;
+  height: 50px;
+  width: 100px;
 }
 
 .card {
-    height: 100%;
+  height: 100%;
 }
 
 .card-img {
-    max-height: 100%;
-    width: auto;
-    max-width: 100%;
-    object-fit: contain;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .card-title {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .btn-primary {
-    width: fit-content;
+  width: fit-content;
+}
+.subheading {
+  font-size: 1.5rem;
 }
