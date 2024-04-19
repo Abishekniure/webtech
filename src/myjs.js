@@ -6,104 +6,85 @@ function scrollToTop() {
   });
 }
 // Trending products in my home page
-function createProductCards( type, myid) {
+function createProductCards(type, myid) {
   const productContainer = document.getElementById(myid);
   const row = productContainer.querySelector(".row");
-
 
   // Loop through the products based on the input number
   for (let i = 0; i < products.length; i++) {
     const product = products[i]; // Get the product at index i
 
-    if (product.type === type){
+    if (product.type === type) {
       const col = document.createElement("div");
-    col.classList.add("col-lg-4", "col-md-6", "mb-4");
+      col.classList.add("col-lg-4", "col-md-6", "mb-4");
 
-    const card = document.createElement("div");
-    card.classList.add("card", "shadow-sm", "h-80");
+      const card = document.createElement("div");
+      card.classList.add(
+        "card",
+        "shadow-sm",
+        "h-80",
+        "border",
+        "border-success"
+      );
 
-    const imgContainer = document.createElement("div");
-    imgContainer.classList.add("text-center", "p-3");
+      const imgContainer = document.createElement("div");
+      imgContainer.classList.add("text-center", "p-3");
 
-    const img = document.createElement("img");
-    img.src = product.imageSrc;
-    img.classList.add("img-fluid", "shoe-image");
+      const img = document.createElement("img");
+      img.src = product.imageSrc;
+      img.classList.add("img-fluid", "shoe-image");
 
-    const cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
+      const cardBody = document.createElement("div");
+      cardBody.classList.add("card-body");
 
-    const title = document.createElement("h5");
-    title.textContent = product.name;
-    title.classList.add("card-title", "text-center", "text-dark", "fw-bold");
+      const title = document.createElement("h5");
+      title.textContent = product.name;
+      title.classList.add("card-title", "text-center", "text-dark", "fw-bold");
 
-    const details = document.createElement("p");
-    details.innerHTML = `<strong>Price:</strong> $${product.price}}`;
-    details.classList.add("card-text", "text-center");
+      const details = document.createElement("p");
+      details.innerHTML = `<strong>Price:</strong> $${product.price}`;
+      details.classList.add("card-text", "text-center");
 
-  if (product.color) {
+      if (product.color) {
+        details.innerHTML += `<br><strong>Color:</strong> ${product.color} <br><strong>Size:</strong> ${product.size}`;
+      }
 
-    details.innerHTML += `<br><strong>Color:</strong> ${product.color} <br><strong>Size:</strong> ${product.size}`;
-  }
+      const addToCart = document.createElement("button");
+      addToCart.innerHTML = '<i class="fas fa-plus"></i> Add to Cart';
+      addToCart.classList.add("btn", "my-btn", "btn-sm", "w-100", "mt-2");
+      addToCart.addEventListener("click", function () {
+        // Add to cart functionality here
+        alert("Added to cart: " + product.name);
+      });
 
-    const addToCart = document.createElement("button");
-    addToCart.innerHTML = '<i class="fas fa-plus"></i> Add to Cart';
-    addToCart.classList.add("btn", "btn-warning", "btn-sm", "w-100", "mt-2");
-    addToCart.addEventListener("click", function() {
-      
-      alert("Added to cart: " + product.name);
-    });
-
-    imgContainer.appendChild(img);
-    card.appendChild(imgContainer);
-    cardBody.appendChild(title);
-    cardBody.appendChild(details);
-    cardBody.appendChild(addToCart);
-    card.appendChild(cardBody);
-    col.appendChild(card);
-    row.appendChild(col);
-
-
+      imgContainer.appendChild(img);
+      card.appendChild(imgContainer);
+      cardBody.appendChild(title);
+      cardBody.appendChild(details);
+      cardBody.appendChild(addToCart);
+      card.appendChild(cardBody);
+      col.appendChild(card);
+      row.appendChild(col);
     }
-    
   }
 }
 
 // Function to create the list of products
 function createProductList(products) {
   const productList = document.getElementById("productList");
-  
+
   // Clear any existing items
   productList.innerHTML = "";
 
   // Loop through the products and create list items
-  products.forEach(product => {
-      const listItem = document.createElement("li");
-      listItem.classList.add("list-group-item");
-      listItem.classList.add("list-group-item-info");
-      listItem.textContent = `${product.name} - Price: ${product.price}`;
-      productList.appendChild(listItem);
+  products.forEach((product) => {
+    const listItem = document.createElement("li");
+    listItem.classList.add("list-group-item");
+    listItem.classList.add("list-group-item-info");
+    listItem.textContent = `${product.name} - Price: ${product.price}`;
+    productList.appendChild(listItem);
   });
 }
-
-
-
-// Function to create the list of products
-function createProductList(products) {
-  const productList = document.getElementById("productList");
-  
-  // Clear any existing items
-  productList.innerHTML = "";
-
-  // Loop through the products and create list items
-  products.forEach(product => {
-      const listItem = document.createElement("li");
-      listItem.classList.add("list-group-item");
-      listItem.classList.add("list-group-item-info");
-      listItem.textContent = `${product.name} - Price: ${product.price}`;
-      productList.appendChild(listItem);
-  });
-}
-
 
 // Sample products data with additional details like color and size
 const products = [
