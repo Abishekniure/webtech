@@ -244,3 +244,8 @@ ul a {
 .subheading {
   font-size: 1.5rem;
 }
+.sidemenu {
+  position: fixed;
+  top: 80%;
+  left: 5%;
+}
