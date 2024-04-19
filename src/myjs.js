@@ -86,6 +86,25 @@ function createProductList(products) {
 }
 
 
+
+// Function to create the list of products
+function createProductList(products) {
+  const productList = document.getElementById("productList");
+  
+  // Clear any existing items
+  productList.innerHTML = "";
+
+  // Loop through the products and create list items
+  products.forEach(product => {
+      const listItem = document.createElement("li");
+      listItem.classList.add("list-group-item");
+      listItem.classList.add("list-group-item-info");
+      listItem.textContent = `${product.name} - Price: ${product.price}`;
+      productList.appendChild(listItem);
+  });
+}
+
+
 // Sample products data with additional details like color and size
 const products = [
   {
