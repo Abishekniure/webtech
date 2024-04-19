@@ -85,44 +85,138 @@ function createProductList(products) {
 }
 
 
+
+// Function to create the list of products
+function createProductList(products) {
+  const productList = document.getElementById("productList");
+  
+  // Clear any existing items
+  productList.innerHTML = "";
+
+  // Loop through the products and create list items
+  products.forEach(product => {
+      const listItem = document.createElement("li");
+      listItem.classList.add("list-group-item");
+      listItem.classList.add("list-group-item-info");
+      listItem.textContent = `${product.name} - Price: ${product.price}`;
+      productList.appendChild(listItem);
+  });
+}
+
+
 // Sample products data with additional details like color and size
 const products = [
   {
-    name: "Adidas Ultra Boost",
-    price: "125",
-    color: "Black",
-    size: "10",
-    imageSrc: "../assets/shoes1.png",
+    name: "Puma Canven 2.0",
+    price: "98.96",
+    color: "Navy",
+    size: "42",
+    imageSrc: "../assets/shoe m5.jpg",
     link: "products.html",
     type:"trending",
   },
   {
-    name: "Nike Air Max",
-    price: "125",
+    name: "Reebok Court Advance",
+    price: "90.99",
     color: "White",
-    size: "9",
-    imageSrc: "../assets/shoes2.png",
+    size: "36",
+    imageSrc: "../assets/shoe m2.jpg",
     link: "products.html",
     type:"trending",
   },
   {
-    name:"boot",
-    price:"249",
-    size:"8",
-    imageSrc: "../assets/shoes3.png",
+    name:"Noxos",
+    color:"Whiskey",
+    price:"179.89",
+    size:"42",
+    imageSrc: "../assets/shoe w3.jpg",
+    link:"products.html",
+    type:"trending",
+  },
+  {
+    name:"pyro",
+    color:"Black",
+    price:"98.96",
+    size:"35",
+    imageSrc: "../assets/shoe w8.jpg",
+    link:"products.html",
+    type:"trending",
+  },
+  {
+    name:"Clark North",
+    color:"Light Mauve/ Coral Multi",
+    size:"20",
+    price:"49.95",
+    imageSrc: "../assets/shoe k2.jpg",
+    link:"products.html",
+    type:"trending",
+  },
+  {
+    name:"Reebok Royal",
+    color:"White/Vector Blue/yellow",
+    size:"14",
+    price:"72.99",
+    imageSrc: "../assets/shoe k11.jpg",
     link:"products.html",
     type:"trending",
   },
 
+  // comfort product
   {
-    name: "Reebok Classic",
-    price: "125",
-    color: "Blue",
-    size: "8",
-    imageSrc: "../assets/shoes4.png",
+    name: "Hush Puppies",
+    price: "60.59",
+    color: "Brown",
+    size: "42",
+    imageSrc: "../assets/shoe m3.jpg",
     link: "products.html",
-    type:"trending",
+    type:"OurComfort",
   },
+  {
+    name: "Adilette Comfort",
+    price: "52.59",
+    color: "Navy/White",
+    size: "38",
+    imageSrc: "../assets/shoe m7.jpg",
+    link: "products.html",
+    type:"OurComfort",
+  },
+  {
+    name:"Stellar",
+    color:"Blue",
+    price:"40.49",
+    size:"36",
+    imageSrc: "../assets/shoe w7.jpg",
+    link: "products.html",
+    type: "Ourcomfort",
+  },
+  {
+    name:"UNO- Night Shades",
+    color:"Purple",
+    price:"143.96",
+    size:"38",
+    imageSrc: "../assets/shoe w5.jpg",
+    link:"products.html",
+    type:"Ourcomfort",
+  },
+  {
+    name:"Uno-Lite",
+    color:"Pink Multi",
+    size:"12",
+    price:"98.98",
+    imageSrc: "../assets/shoe k7.jpg",
+    link:"products.html",
+    type:"Ourcomfort",
+  },
+  {
+    name:"Adidas",
+    color:"White",
+    size:"13",
+    price:"55.65",
+    imageSrc: "../assets/shoe k12.jpg",
+    link:"products.html",
+    type:"Ourcomfort",
+  },
+
   //  men product
   {
     name: "Glaxy 6m",
@@ -241,7 +335,8 @@ const products = [
     imageSrc: "../assets/shoe w4.jpg",
     link:"products.html",
     type:"women",
-  },{
+  },
+  {
     name:"UNO- Night Shades",
     color:"Purple",
     price:"143.96",
